@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vaccination index{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Liste des vaccinations</h1>
+    
+</div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Statut</th>
+                <th>Date_vaccination</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for vaccination in vaccinations %}
+            <tr>
+                <td>{{ vaccination.id }}</td>
+                <td>{{ vaccination.statut }}</td>
+                <td>{{ vaccination.dateVaccination ? vaccination.dateVaccination|date('Y-m-d') : '' }}</td>
+                <td>
+
+                    <a  type="button" class="btn btn-primary" href="{{ path('vaccination_show', {'id': vaccination.id}) }}">Voir</a>
+                    <a  type="button" class="btn btn-secondary" href="{{ path('vaccination_edit', {'id': vaccination.id}) }}">Mettre à jour</a>
+
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

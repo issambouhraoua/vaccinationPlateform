@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Patient index{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Liste des patients</h1>
+    
+</div>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>CNE</th>
+                <th>Adresse</th>
+                <th>Age</th>
+                <th>Gsm</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for patient in patients %}
+            <tr>
+                <td>{{ patient.id }}</td>
+                <td>{{ patient.nom }}</td>
+                <td>{{ patient.prenom }}</td>
+                <td>{{ patient.CNE}}</td>
+                <td>{{ patient.adresse }}</td>
+                <td>{{ patient.age }}</td>
+                <td>{{ patient.gsm }}</td>
+                <td>
+                    <a  type="button" class="btn btn-primary" href="{{ path('patient_show', {'id': patient.id}) }}">Voir</a>
+                    <a  type="button" class="btn btn-secondary" href="{{ path('vaccination_new_patient', {'id': patient.id}) }}">Ajouter vaccination</a>
+                    
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+   <a href="{{ path('patient_new') }}"  type="button" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i>Ajouter un nouveau patient</a>
+   
+    </div>
+{% endblock %}

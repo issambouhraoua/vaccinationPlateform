@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Vaccination{% endblock %}
+
+{% block body %}
+
+    <div class="container-fluid">
+        
+        <h1>Ajouter une vaccination</h1>
+    </div>
+    <div class="container-fluid">
+    {{ include('vaccination/_form.html.twig') }}
+
+    <a href="{{ path('vaccination_index') }}">back to list</a>
+    
+    </div>
+{% endblock %}

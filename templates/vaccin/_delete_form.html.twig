@@ -1,0 +1,7 @@
+
+<p>
+<form method="post" action="{{ path('vaccin_delete', {'id': vaccin.id}) }}" onsubmit="return confirm('Etes vous sur de vouloir supprimer ce patient?');">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ vaccin.id) }}">
+    <button class="btn btn-danger">Supprimer</button>
+</form>
+</p>

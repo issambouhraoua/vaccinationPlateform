@@ -1,0 +1,50 @@
+body {
+    
+    background-image: url("https://www.journalexpress.ca/wp-content/uploads/sites/6/2020/11/ACT-Biogivre-vaccin-Covid.jpg"); 
+    background-position: center;
+  background-size: cover;
+    
+  }
+  .title {
+      margin-top: 4%;
+      margin-bottom: 4%;
+      font-size: 40px;
+      margin-left: 32%;
+      color: rgb(4, 14, 34);
+  }
+  .container {
+      
+      margin-left: 15%;
+  }
+  .styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+    background-color: #214eaf;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 22px 85px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #214eaf;
+}
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}

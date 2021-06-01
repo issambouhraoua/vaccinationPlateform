@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit CentreVaccination{% endblock %}
+
+
+{% block body %}
+<div class="container-fluid">
+    <h1>Mettre à jour ce centre de vaccination</h1>
+</div>
+<div class="container-fluid">
+    {{ include('centre_vaccination/_form.html.twig', {'button_label': 'Update'}) }}
+    <a href="{{ path('centre_vaccination_index') }}">Retourner</a>
+
+</div>
+  
+{% endblock %}

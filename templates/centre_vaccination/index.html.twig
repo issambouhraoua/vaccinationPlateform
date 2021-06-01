@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CentreVaccination index{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Liste des centres de vaccination</h1>
+    
+</div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom_centre</th>
+                <th>Adresse</th>
+                <th>Ville</th>
+                <th>Nombre_vaccin_disponible</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for centre_vaccination in centre_vaccinations %}
+            <tr>
+                <td>{{ centre_vaccination.id }}</td>
+                <td>{{ centre_vaccination.nomCentre }}</td>
+                <td>{{ centre_vaccination.adresse }}</td>
+                <td>{{ centre_vaccination.ville }}</td>
+                <td>{{ centre_vaccination.nombreVaccinDisponible }}</td>
+                <td>
+
+                    <a  type="button" class="btn btn-primary" href="{{ path('centre_vaccination_show', {'id': centre_vaccination.id}) }}">Voir</a>
+                    <a  type="button" class="btn btn-secondary" href="{{ path('centre_vaccination_edit', {'id': centre_vaccination.id}) }}">Mettre à jour</a>
+                 <!--   {{ include('centre_vaccination/_delete_form.html.twig') }} -->
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('centre_vaccination_new') }}" type="button" class="btn btn-success"><i class="glyphicon glyphicon-plus"></i>Ajouter un nouveau centre</a>
+</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CentreVaccination{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Details du centre de vaccination </h1>
+        
+    </div>    
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ centre_vaccination.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom_centre</th>
+                <td>{{ centre_vaccination.nomCentre }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ centre_vaccination.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Ville</th>
+                <td>{{ centre_vaccination.ville }}</td>
+            </tr>
+            <tr>
+                <th>Nombre_vaccin_disponible</th>
+                <td>{{ centre_vaccination.nombreVaccinDisponible }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a  type="button" class="btn btn-success" href="{{ path('centre_vaccinations', {'id': centre_vaccination.id}) }}">Vaccinations</a>
+    <a  type="button" class="btn btn-secondary" href="{{ path('centre_vaccination_edit', {'id': centre_vaccination.id}) }}">Mettre à jour</a>
+    <a  type="button" class="btn btn-secondary" href="{{ path('centre_vaccination_index') }}">Retourner a la liste</a>
+
+   <!-- {{ include('centre_vaccination/_delete_form.html.twig') }} -->
+</div>
+{% endblock %}

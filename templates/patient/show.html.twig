@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Patient{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Informations sur le patient </h1>
+        
+    </div>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ patient.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ patient.nom }}</td>
+            </tr>
+           
+            <tr>
+                <th>Prenom</th>
+                <td>{{ patient.prenom }}</td>
+            </tr>
+            <tr>
+                <th>CNE</th>
+                <td>{{ patient.CNE }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ patient.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{ patient.age }}</td>
+            </tr>
+            <tr>
+                <th>Gsm</th>
+                <td>{{ patient.gsm }}</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <a  type="button" class="btn btn-success" href="{{ path('patient_vaccinations', {'id': patient.id}) }}">Vaccinations</a>
+
+   <a  type="button" class="btn btn-secondary" href="{{ path('patient_edit', {'id': patient.id}) }}">Mettre à jour</a>
+{{ include('patient/_delete_form.html.twig') }}
+        
+
+</div>
+
+{% endblock %}

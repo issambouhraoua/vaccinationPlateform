@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vaccin{% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Informations sur le vaccin </h1>
+        
+   </div>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ vaccin.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom_vaccin</th>
+                <td>{{ vaccin.nomVaccin }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ vaccin.description }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a class="btn btn-secondary" href="{{ path('vaccin_edit', {'id': vaccin.id}) }}">Mettre à jour</a>
+
+    {{ include('vaccin/_delete_form.html.twig') }}
+{% endblock %}
