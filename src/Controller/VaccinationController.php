@@ -30,6 +30,7 @@ class VaccinationController extends AbstractController
      */
     public function index(VaccinationRepository $vaccinationRepository): Response
     {
+        
         return $this->render('vaccination/index.html.twig', [
             'vaccinations' => $vaccinationRepository->findAll(),
         ]);
@@ -106,7 +107,7 @@ class VaccinationController extends AbstractController
         /**
      * @Route("/{id}/newPatientVacc", name="vaccination_new_patient", methods={"GET","POST"})
      */
-
+    
     public function newPatientVacc(Request $request, Patient $patient): Response
     {
         $entityManager = $this->getDoctrine()->getManager();
