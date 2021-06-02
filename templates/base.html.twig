@@ -34,6 +34,7 @@
         {% endblock %}
     </head>
     <body id="wrapper">
+    {% if app.user %}
         <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -181,5 +182,9 @@
                 </nav>
                 <!-- End of Topbar -->
         {% block body %}{% endblock %}
+        {% endif %}
+        {% if not app.user  %}
+        <h1>You have to be logged in </h1>
+        {% endif %}
     </body>
 </html>

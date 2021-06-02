@@ -3,6 +3,7 @@
 {% block title %}Edit Vaccination{% endblock %}
 
 {% block body %}
+{% if app.user %}
 <div class="container-fluid">
     <h1>Mettre à jour la vaccination</h1>
 </div>
@@ -11,5 +12,5 @@
     <a href="{{ path('vaccination_index') }}">Retourner</a>
 
 </div>
-  
+{% endif %}
 {% endblock %}

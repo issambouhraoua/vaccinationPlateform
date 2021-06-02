@@ -53,12 +53,8 @@
 
         {% if app.user %}
             <div class="mb-3">
-                You are logged in as {{ app.user.username }}, <a href="{{ path('app_login') }}">Logout</a>
+                You are logged in as {{ app.user.username }}, <a href="{{ path('vaccination_index') }}">Logout</a>
             </div>
-        {% endif %}
-
-        {% if not app.user %}
-            {% do redirect=("{{ path('app_login')}}" %}
         {% endif %}
 
 

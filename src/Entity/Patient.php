@@ -36,7 +36,7 @@ class Patient
      /**
      * @ORM\Column(type="string", length=255)
      */
-    private $CNE;
+    private $CIN;
 
 
     /**
@@ -83,9 +83,9 @@ class Patient
         return $this;
     }
 
-    public function getCNE(): ?string
+    public function getCIN(): ?string
     {
-        return $this->CNE;
+        return $this->CIN;
     }
 
     public function setCNE(string $CNE): self
